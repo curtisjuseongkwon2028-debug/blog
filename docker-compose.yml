@@ -44,5 +44,32 @@ services:
       retries: 20
     restart: unless-stopped
 
+  # ── 실습용 모니터링 도구 ──
+  # Dozzle: 모든 컨테이너 로그를 브라우저에서 실시간으로 보기 (http://localhost:8888)
+  dozzle:
+    image: amir20/dozzle:latest
+    ports:
+      - "8888:8080"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    restart: unless-stopped
+
+  # phpMyAdmin: MySQL 데이터를 브라우저에서 보기 (http://localhost:5050)
+  # (이 프로젝트 DB는 MySQL이라 pgAdmin 대신 phpMyAdmin을 사용)
+  # 아래 접속 정보는 위 db 서비스 설정과 같아서, 서버 등록 없이 바로 blog DB가 열려요.
+  phpmyadmin:
+    image: phpmyadmin:latest
+    ports:
+      - "5050:80"
+    environment:
+      PMA_HOST: db              # db 서비스 이름
+      PMA_PORT: 3306            # MySQL 기본 포트
+      PMA_USER: ${DB_USER}      # db 서비스의 MYSQL_USER 와 동일
+      PMA_PASSWORD: ${DB_PASSWORD}  # db 서비스의 MYSQL_PASSWORD 와 동일
+    depends_on:
+      db:
+        condition: service_healthy
+    restart: unless-stopped
+
 volumes:
   db-data:
