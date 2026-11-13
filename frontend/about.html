@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About - My Blog</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <a class="logo" href="index.html">My Blog</a>
+      <nav id="nav"></nav>
+    </div>
+  </header>
+
+  <main>
+    <article>
+      <h1>About</h1>
+      <p>이 블로그는 <strong>3-Tier Architecture</strong>로 만들어졌어요.</p>
+      <ol>
+        <li><strong>Presentation Tier</strong> — Nginx + HTML/CSS/JavaScript: 화면을 보여줘요.</li>
+        <li><strong>Application Tier</strong> — Node.js + Express: 요청을 처리하고 로그인을 확인해요.</li>
+        <li><strong>Data Tier</strong> — MySQL: 글, 댓글, 사용자를 저장해요.</li>
+      </ol>
+      <p>세 계층은 각각 Docker 컨테이너로 실행되고, 브라우저는 Presentation Tier에만 접속할 수 있어요.</p>
+    </article>
+  </main>
+
+  <footer>© 2026 My Blog</footer>
+
+  <script src="js/api.js"></script>
+</body>
+</html>

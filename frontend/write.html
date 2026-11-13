@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>글쓰기 - My Blog</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <a class="logo" href="index.html">My Blog</a>
+      <nav id="nav"></nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="panel">
+      <h1 id="page-title">글쓰기</h1>
+      <form id="write-form">
+        <label for="title">제목</label>
+        <input id="title" maxlength="200" required>
+        <label for="category">카테고리</label>
+        <input id="category" maxlength="50" placeholder="예: 일상, 공부">
+        <label for="content">본문</label>
+        <textarea id="content" rows="15" required></textarea>
+        <div id="write-error"></div>
+        <button type="submit" id="submit-button">등록</button>
+      </form>
+    </div>
+  </main>
+
+  <footer>© 2026 My Blog</footer>
+
+  <script src="js/api.js"></script>
+  <script src="js/write.js"></script>
+</body>
+</html>

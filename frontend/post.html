@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Blog</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <a class="logo" href="index.html">My Blog</a>
+      <nav id="nav"></nav>
+    </div>
+  </header>
+
+  <main>
+    <div id="post"></div>
+
+    <section class="comments" id="comments-section" hidden>
+      <h3>댓글 <span id="comment-count"></span></h3>
+      <div id="comments"></div>
+
+      <form id="comment-form">
+        <label for="nickname">닉네임</label>
+        <input id="nickname" maxlength="50" required>
+        <label for="comment-content">내용</label>
+        <textarea id="comment-content" rows="3" maxlength="1000" required></textarea>
+        <div id="comment-error"></div>
+        <button type="submit">댓글 등록</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>© 2026 My Blog</footer>
+
+  <script src="js/api.js"></script>
+  <script src="js/post.js"></script>
+</body>
+</html>

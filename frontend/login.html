@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>로그인 - My Blog</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <a class="logo" href="index.html">My Blog</a>
+      <nav id="nav"></nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="panel narrow">
+      <h1>관리자 로그인</h1>
+      <form id="login-form">
+        <label for="username">아이디</label>
+        <input id="username" autocomplete="username" required>
+        <label for="password">비밀번호</label>
+        <input id="password" type="password" autocomplete="current-password" required>
+        <div id="login-error"></div>
+        <button type="submit">로그인</button>
+      </form>
+    </div>
+  </main>
+
+  <footer>© 2026 My Blog</footer>
+
+  <script src="js/api.js"></script>
+  <script src="js/login.js"></script>
+</body>
+</html>
